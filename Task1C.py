@@ -10,7 +10,9 @@ for station, distance in list_in_radius:
     data = [station.name, station.town, distance]
     new_list.append(data)
 
-print(new_list)
+alphabetical_list = sorted(new_list)
+
+print(alphabetical_list)
 
 
 
