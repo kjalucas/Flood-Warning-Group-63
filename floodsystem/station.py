@@ -29,6 +29,12 @@ class MonitoringStation:
 
         self.latest_level = None
 
+    def typical_range_consistent(self):
+
+        
+
+
+
     def __repr__(self):
         d = "Station name:     {}\n".format(self.name)
         d += "   id:            {}\n".format(self.station_id)
