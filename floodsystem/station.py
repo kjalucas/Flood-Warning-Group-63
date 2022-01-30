@@ -48,11 +48,20 @@ class MonitoringStation:
 
     def typical_range_consistent(self):
 
-        if self.typical_range is None or self.typical_range[0] is none or self.typical_range[1] is None:
+        if self.typical_range == None: 
             return False
 
-        else if self.typical_range[0] > self.typical_range[1]:
+        elif self.typical_range[0] > self.typical_range[1]:
             return False
 
         else:
             return True
+
+
+    def inconsistent_typical_range_stations(stations):
+        inconsistent = []
+        for i in stations:
+            if i.typical_range_consistent == False:
+                inconsistent.append(i)
+
+        return inconsistent
