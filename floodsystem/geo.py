@@ -33,3 +33,15 @@ def rivers_with_station(stations):
         RiversSet.add(station.river)
     
     return RiversSet
+
+def stations_by_river(stations):
+    riverDict = {}
+    ListOfRivers = list(rivers_with_station(stations))
+    for r in ListOfRivers:
+        rStations = []
+        for s in stations:
+            if s.river == r:
+                rStations.append(s)
+        riverDict[r] = rStations
+    
+    return riverDict
