@@ -17,6 +17,6 @@ alphabetical_names = sorted(names)
 
 
 
-print(alphabetical_names)
+print("Stations with inconsistent data:", alphabetical_names,"\n")
 
 
