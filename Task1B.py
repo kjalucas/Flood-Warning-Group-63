@@ -12,5 +12,5 @@ for station, distance in distances:
 
 ten_closest = stations_and_distances[:10]
 ten_furthest = stations_and_distances[-10:]
-print(ten_closest)
-print(ten_furthest)
+print("Ten stations closest to co-ordinate:", ten_closest ,"\n")
+print("Ten stations furthest from co-ordinate:", ten_furthest ,"\n")

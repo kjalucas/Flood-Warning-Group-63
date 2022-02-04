@@ -12,7 +12,6 @@ for station, distance in list_in_radius:
 
 alphabetical_list = sorted(new_list)
 
-print(alphabetical_list)
-
+print("Stations within a 10km radius of Cambridge:", alphabetical_list ,"\n")
 
 

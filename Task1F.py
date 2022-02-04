@@ -1,4 +1,3 @@
-from sympy import inverse_cosine_transform
 from floodsystem.station import inconsistent_typical_range_stations
 from floodsystem.stationdata import build_station_list
 
@@ -17,6 +16,6 @@ alphabetical_names = sorted(names)
 
 
 
-print(alphabetical_names)
+print("Stations with inconsistent data:", alphabetical_names,"\n")
 
 
