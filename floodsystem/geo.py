@@ -27,3 +27,9 @@ def stations_within_radius(stations, centre, r):
 
     return within_radius
 
+def rivers_with_station(stations):
+    RiversSet = set()
+    for station in stations:
+        RiversSet.add(station.river)
+    
+    return RiversSet
