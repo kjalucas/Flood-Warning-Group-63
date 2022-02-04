@@ -62,7 +62,6 @@ def rivers_by_station_number(stations, N):
                 tuple1 = (key,l)
                 highestKey = key
         tuples.append(tuple1)
-        print(highestKey)
         riverDict.pop(highestKey)      
     for key in riverDict.keys():
             l = len(riverDict[key])
