@@ -33,11 +33,3 @@ def test_stations_by_distance():
 
     assert stations_and_distances[1][0] == "Station 2"
     
-
-
-
-
-
-    
-
-
