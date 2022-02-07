@@ -2,7 +2,7 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import stations_by_distance
 from floodsystem.station import MonitoringStation
 
-if 1 ==1 :
+def test_stations_by_distance():
 
     s_id = "test-s-id"
     m_id = "test-m-id"
@@ -31,7 +31,7 @@ if 1 ==1 :
         data = [station.name, distance]
         stations_and_distances.append(data)
 
-    assert stations_and_distances[1][0] == "Station 2":
+    assert stations_and_distances[1][0] == "Station 2"
     
 
 
