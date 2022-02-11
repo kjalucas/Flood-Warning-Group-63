@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
-from . import datafetcher
-from .station import MonitoringStation
-from .stationdata import build_station_list
-from .station import typical_high_range
+from floodsystem.datafetcher import fetch_measure_levels
+from floodsystem.stationdata import build_station_list
+from floodsystem.station import MonitoringStation
+
 
 def plot_water_levels(station, dates, levels):
 
@@ -11,10 +11,10 @@ def plot_water_levels(station, dates, levels):
     plt.plot(dates, levels)
 
     #Plot low range
-    plt.plot([dates[0], dates [-1]], [station.typical_range[0], station.typical_range[0], label = "Typical Low Levels")
+    plt.plot([dates[0], dates [-1]], [station.typical_range[0], station.typical_range[0]], label="Typical Low Levels")
 
     #Plot high range
-    plt.plot([dates[0], dates [-1]], [station.typical_range[1], station.typical_range[1], label = "Typical High Levels")
+    plt.plot([dates[0], dates [-1]], [station.typical_range[1], station.typical_range[1]], label="Typical High Levels")
 
 
 
