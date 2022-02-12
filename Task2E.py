@@ -10,6 +10,11 @@ from floodsystem.plot import plot_water_levels
 
 #make a random list of stations to use until Sophie does the first parts
 stations = build_station_list()
-five_stations = stations[0:5]
-print(five_stations)
+five_riskiest_stations = stations[0:1]
+## need to add in code that selects the five riskiest stations
+## edit stations[0:1] to [0:5] after all code is written
+
+for station in five_riskiest_stations:
+    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days =10))
+    plot_water_levels(station, dates, levels)
 
