@@ -15,4 +15,10 @@ stations = build_station_list()
 update_water_levels(stations)
 s = stations_level_over_threshold(stations, 0.8)
 
-print(names_and_levels(s))
+def tuplesInLines(listOfTuples):
+    for i in range(len(listOfTuples)):
+        print(listOfTuples[i][0],listOfTuples[i][1])
+        
+
+f = names_and_levels(s)
+tuplesInLines(f)
