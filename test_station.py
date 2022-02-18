@@ -20,6 +20,8 @@ def test_create_monitoring_station():
 
     s.latest_level = 3.4445 #Adding lastest level to test station
     assert s.relative_water_level() == 1.0 #Check relative_water_level method agaisnt known value
+    s.latest_level = None
+    assert s.relative_water_level() == None 
 
     assert s.station_id == s_id
     assert s.measure_id == m_id
