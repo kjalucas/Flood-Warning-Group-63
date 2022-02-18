@@ -26,7 +26,8 @@ def stations_highest_rel_level(stations, N):
             tuple1 = (station,station.relative_water_level())
             atRisk.append(tuple1)
         atRisk.sort(key=lambda x: x[1], reverse=True)
-    return atRisk[:N]
+    nAtRisk = atRisk[0:N]
+    return nAtRisk
 
 
         
