@@ -19,9 +19,9 @@ def test_create_monitoring_station():
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
 
     s.latest_level = 3.4445 #Adding lastest level to test station
-    assert s.relative_water_level() == 1.0 #Check relative_water_level method agaisnt known value
-    s.latest_level = None
-    assert s.relative_water_level() == None 
+    assert s.relative_water_level() == 1.0 #Check relative_water_level method against known value
+    s.latest_level = None 
+    assert s.relative_water_level() == None #Test for latest water level value being none 
 
     assert s.station_id == s_id
     assert s.measure_id == m_id
@@ -32,7 +32,7 @@ def test_create_monitoring_station():
     assert s.town == town
 
     s.typical_range = None
-    assert s.relative_water_level() == None 
+    assert s.relative_water_level() == None #Test for typical water range data being inconsistent
 
     
     
