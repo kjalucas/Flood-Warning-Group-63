@@ -59,6 +59,8 @@ class MonitoringStation:
     def relative_water_level(self):
         if self.typical_range_consistent == False:
             pass
+        elif self.latest_level == None:
+            pass
         else:
             A = self.latest_level
             L = self.typical_range[0]

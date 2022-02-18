@@ -31,6 +31,9 @@ def test_create_monitoring_station():
     assert s.river == river
     assert s.town == town
 
+    s.typical_range = None
+    assert s.relative_water_level() == None 
+
     
     
 
