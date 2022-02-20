@@ -12,10 +12,17 @@ from floodsystem.flood import stations_highest_rel_level
 stations = build_station_list()
 update_water_levels(stations)
 
+flooded_list_x = stations_highest_rel_level(stations, 10)
+print(flooded_list_x)
+flooded_list = []
 
-five_riskiest_stations = stations_highest_rel_level(stations, 5)
+for station in stations:
+    for i in range(3,8):
+        if (flooded_list_x[i][0]).name == station.name:
+            flooded_list.append(station)
 
-for station in five_riskiest_stations:
-    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days =10))
+
+for station in flooded_list:
+    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 10))
     plot_water_levels(station, dates, levels)
 
