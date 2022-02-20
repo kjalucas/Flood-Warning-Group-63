@@ -4,6 +4,7 @@ from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list
 from floodsystem.station import MonitoringStation
 from floodsystem.analysis import polyfit
+import matplotlib as mpl
 
 
 def plot_water_levels(station, dates, levels):
@@ -35,8 +36,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
     plot_water_levels(dates, levels, p)
     poly, d0 = polyfit(dates, levels, p)
     
-    plt.dates.dates2num(dates)
-    y = poly(plt.dates.dates2num(dates) - d0)
+    y = poly(mpl.dates.dates2num(dates) - d0)
 
     plt.plot(dates, y, label = "Best fit")
 

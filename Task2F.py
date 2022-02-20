@@ -6,19 +6,27 @@ import matplotlib as mpl
 import numpy as np
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.plot import plot_water_levels
+from floodsystem.flood import stations_highest_rel_level
 from floodsystem.plot import plot_water_level_with_fit
-import matplotlib.dates as date
 
-#make a random list of stations to use until Sophie does the first parts
+
 stations = build_station_list()
-five_riskiest_stations = stations[0:1]
-## need to add in code that selects the five riskiest stations
-## edit stations[0:1] to [0:5] after all code is written
+update_water_levels(stations)
 
-for station in five_riskiest_stations:
-    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days =2))
-    print(len(dates), len(levels))
-    dates = date.date2num(dates)
-    plot_water_level_with_fit(station, dates, levels, 4)
+flooded_list_x = stations_highest_rel_level(stations, 10)
+
+flooded_list = []
+
+for station in stations:
+    for i in range(3,8):
+        if (flooded_list_x[i][0]).name == station.name:
+            flooded_list.append(station)
+
+
+for station in flooded_list:
+    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 2))
+    plot_water_level_with_fit(station,dates,levels, 4)
+
+
 
     
