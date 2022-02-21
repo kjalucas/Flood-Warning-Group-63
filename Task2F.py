@@ -18,13 +18,13 @@ flooded_list_x = stations_highest_rel_level(stations, 10)
 flooded_list = []
 
 for station in stations:
-    for i in range(3,8):
+    for i in range(4,9):
         if (flooded_list_x[i][0]).name == station.name:
             flooded_list.append(station)
 
 
 for station in flooded_list:
-    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 2))
+    dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 2))    
     plot_water_level_with_fit(station,dates,levels, 4)
 
 

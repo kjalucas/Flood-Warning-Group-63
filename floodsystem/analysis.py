@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 def polyfit(dates, levels, p):
     
-    days = matplotlib.dates.date2num(dates)
-    d0 = np.amin(days)
+    days = mpl.dates.date2num(dates)
+    d0 = np.min(days)
     x = days - d0
     y = levels
 
