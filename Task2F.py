@@ -24,8 +24,10 @@ for station in stations:
 
 
 for station in flooded_list:
+    print(station)
     dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 2))    
     plot_water_level_with_fit(station,dates,levels, 4)
+    plt.show()
 
 
 

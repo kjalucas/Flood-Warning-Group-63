@@ -29,11 +29,12 @@ def plot_water_levels(station, dates, levels):
     # Display plot
     plt.tight_layout()  # This makes sure plot does not cut off date labels
 
-    plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
 
-    poly, d0 = polyfit(dates, levels, p)
+    plot_water_levels(station, dates, levels)
+
+    d0, poly = polyfit(dates, levels, p)
 
     a = mpl.dates.date2num(dates)
     
