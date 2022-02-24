@@ -17,33 +17,34 @@ update_water_levels(stations)
 station_names = []
 
 dictionary = {}
+town_means = {}
 
 for station in stations:
-    if station.town in station_names:
-        pass
-    else:
-        station_names.append(station.town)
-
-
-
-for station in stations:
-    level = station.relative_water_level()
-    if level == None:
-        break
     town = station.town
-    if level < 0.8:
-        if town in dictionary:
-            dictionary[town].append(1)
-        else:
-            dictionary[town] = [1]
-    elif 0.8 <= level <= 1.2:
-        if town in dictionary:
-            dictionary[town].append(2)
-        else:
-            dictionary[town] = [2]
+    if town in dictionary:
+        dictionary[town].append(station)
+    else:
+        dictionary[town] = [station]
+
+for station in stations:
+    town = station.town
+    if town in town_means:
+        town_means[town].append(station)
+    else:
+        town_means[town] = [station]
+
+for town in dictionary:
+    level_list = []
+    for station in dictionary[town]:
+        level = station.relative_water_level()
+        if level != None:
+            level_list.append(level)
+    if len(level_list) != 0:
+        mean = sum(level_list)/len(level_list)
+        town_means[town] = mean
+    else:
+        town_means[town] = 0
+
+print(town_means)
 
 
-
-dictionary["Ardingly"].append(1)
-
-print(dictionary)
