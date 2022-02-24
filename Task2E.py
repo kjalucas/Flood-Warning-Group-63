@@ -17,7 +17,7 @@ print(flooded_list_x)
 flooded_list = []
 
 for station in stations:
-    for i in range(3,8):
+    for i in range(1,5):
         if (flooded_list_x[i][0]).name == station.name:
             flooded_list.append(station)
 
@@ -25,4 +25,5 @@ for station in stations:
 for station in flooded_list:
     dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 10))
     plot_water_levels(station, dates, levels)
+    plt.show()
 
