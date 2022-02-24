@@ -83,9 +83,10 @@ for station in stations:
                 else:
                     level_difference = today_level - yesterday_level
                     if level_difference > 0:
-                        dict_of_severe[station.town].append("increasing")
+                        dict_of_severe[station.town].append("inc")
                     else:
-                        dict_of_severe[station.town].append("decreasing")
+                        dict_of_severe[station.town].append("dec")
 
-print(dict_of_severe)
+for key in dict_of_severe:
+    print(key, dict_of_severe[key])
   
