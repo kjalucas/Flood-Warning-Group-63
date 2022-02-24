@@ -18,7 +18,7 @@ flooded_list_x = stations_highest_rel_level(stations, 10)
 flooded_list = []
 
 for station in stations:
-    for i in range(7,10):
+    for i in range(1,5):
         if (flooded_list_x[i][0]).name == station.name:
             flooded_list.append(station)
 
