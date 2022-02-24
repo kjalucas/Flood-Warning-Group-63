@@ -45,6 +45,26 @@ for town in dictionary:
     else:
         town_means[town] = 0
 
-print(town_means)
+not_risky = []
+low = []
+moderate = []
+high = []
+severe = []
 
+for town in town_means:
+    if town_means[town] < 1.2:
+        not_risky.append(town)
 
+    elif town_means[town] < 1.5:
+        low.append(town)
+
+    elif town_means[town] < 1.8:
+        moderate.append(town)
+    
+    elif town_means[town] < 2.1:
+        high.append(town)
+
+    else:
+        severe.append(town)
+
+print(severe)
