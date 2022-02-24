@@ -1,3 +1,4 @@
+from tkinter.tix import INCREASING
 from floodsystem.stationdata import update_water_levels
 from floodsystem.stationdata import build_station_list
 import matplotlib.pyplot as plt
@@ -68,3 +69,23 @@ for town in town_means:
         severe.append(town)
 
 print(severe)
+
+dict_of_severe = dict.fromkeys(severe, [])
+
+for station in stations:
+    if station.town in severe:
+            dates, levels = fetch_measure_levels(station.measure_id, dt = timedelta(days = 1))
+            if levels:
+                yesterday_level = levels[-1]
+                today_level = levels[0]
+                if yesterday_level == None or today_level == None:
+                    dict_of_severe[station.town].append(None)
+                else:
+                    level_difference = today_level - yesterday_level
+                    if level_difference > 0:
+                        dict_of_severe[station.town].append("increasing")
+                    else:
+                        dict_of_severe[station.town].append("decreasing")
+
+print(dict_of_severe)
+  
