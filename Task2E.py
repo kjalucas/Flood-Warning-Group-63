@@ -13,13 +13,16 @@ stations = build_station_list()
 update_water_levels(stations)
 
 flooded_list_x = stations_highest_rel_level(stations, 10)
-print(flooded_list_x)
+
 flooded_list = []
 
 for station in stations:
-    for i in range(1,5):
-        if (flooded_list_x[i][0]).name == station.name:
-            flooded_list.append(station)
+    for i in range(0,6):
+        if (flooded_list_x[i][0]).name != 'Letcombe Bassett':
+            if (flooded_list_x[i][0]).name == station.name:
+                flooded_list.append(station)
+
+print(flooded_list)
 
 
 for station in flooded_list:
