@@ -53,16 +53,16 @@ high = []
 severe = []
 
 for town in town_means:
-    if town_means[town] < 1.2:
+    if town_means[town] < 0.8:
         not_risky.append(town)
 
-    elif town_means[town] < 1.5:
+    elif town_means[town] < 1.0:
         low.append(town)
 
-    elif town_means[town] < 1.8:
+    elif town_means[town] < 1.2:
         moderate.append(town)
     
-    elif town_means[town] < 2.1:
+    elif town_means[town] < 1.6:
         high.append(town)
 
     else:
